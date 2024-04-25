@@ -2,11 +2,19 @@ import React from "react";
 import ProjectItem from "./ProjectItem";
 
 function ProjectList({ projects }) {
-  console.log(projects);
   return (
-    <div id="projects">
-      <h2>My Projects</h2>
-      <div id="project-list">{/* render ProjectItem components here */}</div>
+    <div>
+      {projects && projects.length > 0 ? (
+        projects.map((project) => (
+          <ProjectItem
+            key={project.id}
+            id={project.id}
+            technologies={project.technologies}
+          />
+        ))
+      ) : (
+        <p>No projects available</p>
+      )}
     </div>
   );
 }
