@@ -1,17 +1,15 @@
 import React from "react";
 
-function NavBar({ links }) {
+function NavBar() {
+  const links = ["Home", "About", "Projects"]; // Array representing links
+
   return (
     <nav>
-      {links && links.length > 0 ? (
-        links.map((link, index) => (
-          <a key={index} href={`#${link.toLowerCase()}`}>
-            {link.toLowerCase()}
-          </a>
-        ))
-      ) : (
-        <p>No links available</p>
-      )}
+      {links.map((link, index) => (
+        <a key={index} href={`#${link.toLowerCase()}`}>
+          {link.toLowerCase()}
+        </a>
+      ))}
     </nav>
   );
 }

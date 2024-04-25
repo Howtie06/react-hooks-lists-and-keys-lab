@@ -1,10 +1,9 @@
 import React from "react";
 
-
 function ProjectItem({ id, technologies }) {
   return (
     <div>
-      <h3>Project {id}</h3>
+      <h2>Project {id}</h2>
       <div>
         {technologies.map((tech, index) => (
           <span key={index}>{tech}</span>
@@ -15,4 +14,3 @@ function ProjectItem({ id, technologies }) {
 }
 
 export default ProjectItem;
-
